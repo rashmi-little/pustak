@@ -1,0 +1,57 @@
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 1rem;
+}
+
+.grid-full {
+    grid-column: span 2;
+}
+
+label {
+  display: block;
+}
+
+.input-field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #535c91;
+    padding: 0.3rem;
+    border-radius: 0.7rem;
+    font-size: 1.02rem;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.4);
+}
+
+input[type="file"] {
+    padding-block: 0.5rem;
+}
+input[type="radio"], input[type="checkbox"]{
+    scale: 1.4;
+    accent-color: #535c91;
+}
+
+.submit-btn-container {
+    margin-top: 1rem;
+    text-align: center;         
+}
+
+input[type="submit"] {
+    border: none;
+    outline: none;
+    padding: 0.5rem 2.3rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color: #3d4154;
+    transition: background-color 0.1s ease-in;
+}
+
+input[type="submit"]:hover {
+    background-color: #0e1a48;
+
+}
+
