@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head data-th-replace="~{fragments/header :: head(~{})}">
-</head>
-<body>
+  <head data-th-replace="~{fragments/header :: head(~{::link})}"> 
+    <link rel="stylesheet" href="/css/home.css">
+  </head>
+  <body>
     <header data-th-replace="~{fragments/header :: header}"></header>
     <main>
-        <nav data-th-replace="~{fragments/nav :: nav('/new-book', 'New book')}">
-           
-        </nav>
-        <section>
-            books
-        </section>
+      <nav
+        data-th-replace="~{fragments/nav :: nav('/new-book', 'New book')}"
+      ></nav>
+      <section>
+        <article class="book" data-th-each="book : ${books}">
+          <div class="card-head">
+            <img data-th-src="|/image/${book.bookId}|" alt="deafult...">
+          </div>
+          <div class="card-body">
+            <h4 data-th-text="${book.bookName}"></h4>
+            <a data-th-href="|/details?id=${book.bookId}|">Read more...</a>
+          </div>
+        </article>
+      </section>
     </main>
-</body>
+  </body>
 </html>

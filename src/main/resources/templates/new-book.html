@@ -10,7 +10,7 @@
         data-th-replace="~{fragments/nav :: nav('/home', 'back to home')}"
       ></nav>
       <section>
-        <form action="/create-book" method="post">
+        <form action="/create-book" method="post" enctype="multipart/form-data">
           <div class="input-container">
             <div>
               <label for="book-name">Book name</label>

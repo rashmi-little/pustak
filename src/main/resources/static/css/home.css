@@ -1,0 +1,42 @@
+article {
+    border: 2px solid #6217be44;
+    border-radius: 1rem;
+    box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.6);
+    margin-top: 1rem;
+    transition: all ease 0.25s;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    border-radius: 1rem;
+}
+
+article img{
+    width: 100%;
+    border-radius: 1rem;
+}
+
+article .card-body {
+    padding: 0.6rem;
+    display: grid;
+    gap: 0.6rem;
+}
+
+article:hover {
+    scale: 1.1;
+}
+
+@media (max-width : 900px) {
+    section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width : 500px) {
+    section {
+        grid-template-columns: 1fr;
+    }
+}
+

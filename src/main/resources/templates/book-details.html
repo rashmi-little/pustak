@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head data-th-replace="~{fragments/header :: head(~{::link})}">
+    <link rel="stylesheet" href="/css/book-details.css" />
+  </head>
+  <body>
+    <header data-th-replace="~{fragments/header :: header}"></header>
+    <main>
+      <nav
+        data-th-replace="~{fragments/nav :: nav('/home', 'Back to home')}"
+      ></nav>
+      <section>
+        <article data-th-object="${book}">
+          <div class="card-left">
+            <img
+              data-th-src="|/image/*{bookId}|"
+            />
+
+            <p data-th-text="|Category : *{category}|"></p>
+          </div>
+          <div class="card-right">
+            <h2 data-th-text="*{bookName}"></h2>
+            <div class="parent">
+              <div class="book-author">
+                <p data-th-text="*{authorName}"></p>
+                <p data-th-text="*{bookFormat}"></p>
+              </div>
+              <div class="date-page">
+                <p data-th-text="*{publicationDate}"></p>
+                <p data-th-text="|Total page: *{totalPage}|"></p>
+              </div>
+            </div>
+
+            <p data-th-text="*{description}" class="description"></p>
+            <div class="availability" >
+              <p data-th-each="avl : *{availability}" data-th-text="${avl}" class="availability-each"></p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
